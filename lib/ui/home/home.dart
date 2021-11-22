@@ -9,6 +9,7 @@ import 'package:trade_agent/theme/color.dart';
 import 'package:trade_agent/theme/style.dart';
 import 'package:trade_agent/ui/client/pages/client_list.dart';
 import 'package:trade_agent/ui/client/pages/client_page.dart';
+import 'package:trade_agent/ui/order/order_list_page.dart';
 import 'package:trade_agent/ui/payment/payment.dart';
 import 'package:trade_agent/ui/warehouse/warehouse.dart';
 
@@ -167,19 +168,6 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               title: const Text(
-                'Контр Агенты',
-                style: AppTextStyles.drawerTileTextStyle,
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const CounterAgentListPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
                 'Склад',
                 style: AppTextStyles.drawerTileTextStyle,
               ),
@@ -193,13 +181,26 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               title: const Text(
+                'Контр Агенты',
+                style: AppTextStyles.drawerTileTextStyle,
+              ),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ClientListPage(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text(
                 'Заявки',
                 style: AppTextStyles.drawerTileTextStyle,
               ),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const CounterAgentListPage(),
+                    builder: (context) => const OrderListPage(),
                   ),
                 );
               },
@@ -212,7 +213,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => const CounterAgentListPage(),
+                    builder: (context) => const ClientListPage(),
                   ),
                 );
               },
@@ -220,19 +221,6 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               title: const Text(
                 'Оплаты',
-                style: AppTextStyles.drawerTileTextStyle,
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const PaymentListPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Долги',
                 style: AppTextStyles.drawerTileTextStyle,
               ),
               onTap: () {

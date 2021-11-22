@@ -22,16 +22,6 @@ class RadioBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BorderRadius getRadius() {
-      if (first) {
-        return const BorderRadius.horizontal(left: Radius.circular(5.0));
-      }
-      if (last) {
-        return const BorderRadius.horizontal(right: Radius.circular(5.0));
-      }
-
-      return const BorderRadius.all(Radius.circular(5.0));
-    }
 
     return ButtonTheme(
       child: InkWell(
@@ -42,7 +32,6 @@ class RadioBox extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             color: checked ? Colors.blueAccent : Colors.white,
-            borderRadius: getRadius(),
           ),
           child: Center(
             child: Text(

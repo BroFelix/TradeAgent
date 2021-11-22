@@ -27,7 +27,7 @@ class _WarehousePageState extends State<WarehousePage> {
                 decoration: InputDecoration(
                   hintText: 'Поиск по наименованию',
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(5.0),
                   ),
                 ),
               ),

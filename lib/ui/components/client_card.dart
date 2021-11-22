@@ -20,7 +20,7 @@ class ClientCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(5.0),
       ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),

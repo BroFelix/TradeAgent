@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:trade_agent/data/model/client.dart';
 import 'package:trade_agent/data/model/product.dart';
 import 'package:trade_agent/theme/style.dart';
-import 'package:trade_agent/ui/client/util/change_count_dialog.dart';
-import 'package:trade_agent/ui/client/util/client_search.dart';
-import 'package:trade_agent/ui/client/util/product_search.dart';
+import 'package:trade_agent/ui/components/change_count_dialog.dart';
+import 'package:trade_agent/ui/components/client_search.dart';
+import 'package:trade_agent/ui/components/product_search.dart';
 
 class NewOrderPage extends StatefulWidget {
   NewOrderPage({
@@ -70,10 +70,7 @@ class _NewOrderPageState extends State<NewOrderPage> {
 
     void _openClientPickDialog() {
       Navigator.of(context).push(
-        MaterialPageRoute<void>(
-            builder: (context) => ClientSearchPage(
-                  onSelect: (value) {},
-                )),
+        MaterialPageRoute<void>(builder: (context) => ClientSearchPage()),
       );
     }
 
@@ -111,7 +108,7 @@ class _NewOrderPageState extends State<NewOrderPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.close),
           onPressed: () => Navigator.pop(context),
         ),
         titleTextStyle: AppTextStyles.appBarTitleTextStyle,
@@ -123,21 +120,19 @@ class _NewOrderPageState extends State<NewOrderPage> {
           children: [
             TextField(
               readOnly: true,
-              onTap: () {
-                _openClientPickDialog();
-              },
+              onTap: () => _openClientPickDialog(),
               decoration: InputDecoration(
                 hintText: widget.client != null ? widget.client!.fullName : 'Контр Агенты',
                 hintStyle: AppTextStyles.infoTextStyle.copyWith(color: Colors.black),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   borderSide: const BorderSide(color: Colors.black, width: 2.0),
                 ),
               ),
             ),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 8.0),
-              alignment:Alignment.centerRight,
+              alignment: Alignment.centerRight,
               child: FlatButton(
                 shape: RoundedRectangleBorder(
                   side: const BorderSide(color: Colors.black, width: 2.0),
@@ -155,7 +150,7 @@ class _NewOrderPageState extends State<NewOrderPage> {
               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
               decoration: BoxDecoration(
                 color: Colors.grey[300],
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(5.0),
                 border: Border.all(color: Colors.black, width: 2.0),
               ),
               child: DataTable(

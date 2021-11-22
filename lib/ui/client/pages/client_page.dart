@@ -4,10 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:trade_agent/data/model/client.dart';
 import 'package:trade_agent/theme/color.dart';
 import 'package:trade_agent/theme/style.dart';
-import 'package:trade_agent/ui/client/components/radio_box.dart';
+import 'package:trade_agent/ui/components/radio_box.dart';
 import 'package:trade_agent/ui/order/new_order.dart';
 import 'package:trade_agent/ui/refund/refund.dart';
-
 
 class ClientPage extends StatefulWidget {
   const ClientPage({
@@ -232,8 +231,8 @@ class _ClientPageState extends State<ClientPage> {
                                       onPressed: () => showDialog(
                                         context: context,
                                         builder: (context) => StatefulBuilder(
-                                          builder: (context, setState) => _buildDialog(mediaQuery, setState, context),
-                                        ),
+                                            builder: (context, setState) =>
+                                                _buildDialog(mediaQuery, setState, context)),
                                       ),
                                     )
                                   : const Text(
@@ -259,7 +258,9 @@ class _ClientPageState extends State<ClientPage> {
                           DataCell(
                             Text(
                               'Оплачено',
-                              style: AppTextStyles.dataTableTextStyle.copyWith(color: Colors.red[700]),
+                              style: AppTextStyles.dataTableTextStyle.copyWith(
+                                color: Colors.red[700],
+                              ),
                             ),
                           ),
                         ]),
@@ -349,7 +350,9 @@ class _ClientPageState extends State<ClientPage> {
                         DataCell(
                           Text(
                             'Оплачено',
-                            style: AppTextStyles.dataTableTextStyle.copyWith(color: Colors.red[700]),
+                            style: AppTextStyles.dataTableTextStyle.copyWith(
+                              color: Colors.red[700],
+                            ),
                           ),
                         ),
                       ]),
@@ -398,10 +401,10 @@ class _ClientPageState extends State<ClientPage> {
             Container(
               height: 48.0,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(5.0),
                 border: Border.all(
-                  color: Colors.blue,
-                  width: 4.0,
+                  color: Colors.blueAccent,
+                  width: 2.0,
                 ),
               ),
               child: Row(
@@ -446,13 +449,13 @@ class _ClientPageState extends State<ClientPage> {
                 isDense: true,
                 labelText: 'Сумма оплаты',
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(5.0),
                 ),
               ),
             ),
             const SizedBox(height: 64.0),
             MaterialButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
               color: Colors.blueAccent,
               textColor: Colors.white,
               height: 48.0,

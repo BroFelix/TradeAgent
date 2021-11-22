@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trade_agent/theme/style.dart';
-import 'package:trade_agent/ui/client/util/product_search.dart';
+import 'package:trade_agent/ui/components/product_search.dart';
 
 class RefundPage extends StatefulWidget {
   const RefundPage({Key? key}) : super(key: key);
@@ -50,11 +50,11 @@ class _RefundPageState extends State<RefundPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.close),
           onPressed: () => Navigator.pop(context),
         ),
         titleTextStyle: AppTextStyles.appBarTitleTextStyle,
-        title: const Text('Новая заявка'),
+        title: const Text('Возврат'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -69,7 +69,7 @@ class _RefundPageState extends State<RefundPage> {
                 hintText: 'Контр Агенты',
                 hintStyle: AppTextStyles.infoTextStyle.copyWith(color: Colors.black),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   borderSide: const BorderSide(color: Colors.black, width: 2.0),
                 ),
               ),
@@ -93,7 +93,7 @@ class _RefundPageState extends State<RefundPage> {
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(5.0),
                 border: Border.all(color: Colors.black, width: 2.0),
               ),
               child: DataTable(
@@ -157,12 +157,12 @@ class _RefundPageState extends State<RefundPage> {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
           child: MaterialButton(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
             color: Colors.blueAccent,
             height: mediaQuery.size.height * 0.075,
             minWidth: mediaQuery.size.width,
             child: Text(
-              'Добавить Заявку',
+              'Добавить Возрат',
               style: AppTextStyles.buttonTextStyle.copyWith(color: Colors.white),
             ),
             onPressed: () {},
